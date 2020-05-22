@@ -1,0 +1,36 @@
+<view>
+  <view class="detail-container">
+    <view class="detail-container__info" style="background: url({{detail.images.large}}) no-repeat top/cover">
+       
+    </view>
+    <view class="detail-container__info--bgd"></view>
+    <view class="detail-container__info--detail">
+      <image class="detail-container__info--detail--img" src="{{detail.images.small}}"></image>
+      <view class="detail-container__info--detail--content">
+        <view class="detail-container__info--detail--content--title">{{detail.title}}</view>
+        <view class="detail-container__info--detail--content---original">{{detail.original_title}}</view>
+        <view class="detail-container__info--detail--content--average">{{detail.rating.average}}分</view>
+        <view>{{detail.countries[0]}} / {{detail.durations[0]}}</view>
+        <view>导演：{{}}</view>
+      </view>
+    </view>
+
+    <view class="detail-container__summary">{{detail.summary}}</view>
+  </view>
+
+  <van-cell-group>
+    <van-field
+      value="{{ appraisal }}"
+      placeholder="请输入评价"
+      bind:change="onAppraisalChange"
+    />
+  </van-cell-group>
+  <van-rate value="{{ rateValue }}" bind:change="onRateChange" />
+  <view>
+    <van-button type="warning" bindtap="uploadImage">上传图片</van-button>
+  </view>
+  <view class="upload-images">
+    <image wx:for="{{images}}" src="{{item}}" wx:key="index"></image>
+  </view>
+  <van-button type="danger" size="large" bindtap="submit">提交评价</van-button>
+</view>

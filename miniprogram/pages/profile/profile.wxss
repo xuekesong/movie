@@ -1,0 +1,15 @@
+.profile{
+  height: 400rpx;
+  text-align: center;
+  position: relative;
+  width: 100%;
+  background-color: #E54847;
+}
+.profile-img{
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 50%;
+  display: block;
+  overflow: hidden;
+  margin: 0 auto 30rpx;
+}
